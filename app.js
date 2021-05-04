@@ -1,6 +1,31 @@
-/*var express = require('express');
+var express = require('express');
 var app = express();
 var fs = require("fs");
+
+
+
+app.get('/getdata', function (req, res) {
+ var request = require("request");
+    var options = { method: 'GET',
+    url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=301001&date=03-05-2021',
+   
+ }
+ request(options, function (error, response, body) {
+        if (error) {
+          console.error(error);
+                        res.status(200).send(error);
+
+        }
+        else{
+          console.log(response);
+        }
+              res.status(200).send(response);
+});
+
+});
+
+
+
 
 
 
@@ -8,18 +33,10 @@ app.get('/', function (req, res){
               res.status(200).send({});
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(process.env.PORT || 5000, function () {
   
    console.log("Example app listening at http://8081");
 })
-*/
 
-const express = require('express');
-const app = express();
-const port = 3000;
 
-app.get('/', function(req, res) {
-    res.status(200).send({});
-});
 
-app.listen(process.env.PORT || 5000, () => console.log(`url-shortener listening on port ${port}!`));
