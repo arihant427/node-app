@@ -35,6 +35,7 @@ var options = { method: 'GET',
   qs: { pincode: '301001', date: '04-05-2021' },
   headers: 
    { 'postman-token': '6d91a281-de1e-2299-d8bc-24f6a24f0c47',
+   	'Authorization':'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
      'cache-control': 'no-cache',
      'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
      'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS',
