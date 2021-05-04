@@ -22,4 +22,4 @@ app.get('/', function(req, res) {
     res.status(200).send({});
 });
 
-app.listen(port, () => console.log(`url-shortener listening on port ${port}!`));
+app.listen(process.env.PORT || 5000, () => console.log(`url-shortener listening on port ${port}!`));
