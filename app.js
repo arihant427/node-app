@@ -2,9 +2,15 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 
+var cors = require('cors')
 
 
-app.get('/getdata', function (req, res) {
+var corsOptions = {
+
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.get('/getdata',cors(corsOptions), function (req, res) {
 var request = require("request");
     /* var options = { method: 'GET',
     url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=301001&date=03-05-2021',
