@@ -5,7 +5,7 @@ var fs = require("fs");
 
 
 app.get('/getdata', function (req, res) {
- var request = require("request");
+ /*var request = require("request");
     var options = { method: 'GET',
     url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=301001&date=03-05-2021',
    
@@ -20,9 +20,30 @@ app.get('/getdata', function (req, res) {
           console.log(response);
         }
               res.status(200).send(response);
+});*/
+
+
+
+var options = { method: 'GET',
+  url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin',
+  qs: { pincode: '301001', date: '04-05-2021' },
+  headers: 
+   { 'postman-token': '6d91a281-de1e-2299-d8bc-24f6a24f0c47',
+     'cache-control': 'no-cache',
+     'access-control-allow-headers': 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
+     'access-control-allow-methods': 'GET, POST, DELETE, OPTIONS',
+     'access-control-allow-origin': 'cowin.basicfloat.com' } };
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+  res.status(200).send(body);
 });
 
 });
+
+
 
 
 
