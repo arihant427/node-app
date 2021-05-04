@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 
+app.get('/*', function (req, res){
+              res.status(200).send({});
+});
+
 app.get('/getdata', function (req, res) {
  var request = require("request");
     var options = { method: 'GET',
