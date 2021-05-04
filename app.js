@@ -5,8 +5,8 @@ var fs = require("fs");
 
 
 app.get('/getdata', function (req, res) {
- /*var request = require("request");
-    var options = { method: 'GET',
+var request = require("request");
+    /* var options = { method: 'GET',
     url: 'https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=301001&date=03-05-2021',
    
  }
